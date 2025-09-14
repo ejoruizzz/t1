@@ -5,6 +5,7 @@ import '../services/cliente_service.dart';
 import '../models/cliente.dart';
 import 'cliente_form_screen.dart';
 import 'cliente_detail_screen.dart';
+import 'product_list_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -67,6 +68,15 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         actions: [
+          IconButton(
+            icon: Icon(Icons.shopping_bag),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ProductListScreen()),
+              );
+            },
+          ),
           PopupMenuButton(
             onSelected: (value) {
               if (value == 'logout') _logout();

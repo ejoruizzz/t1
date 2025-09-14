@@ -3,8 +3,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'services/auth_service.dart';
 import 'services/cliente_service.dart';
+import 'services/product_service.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
+import 'screens/product_list_screen.dart';
 import 'screens/splash_screen.dart';
 
 void main() {
@@ -20,6 +22,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => AuthService()),
         ChangeNotifierProvider(create: (_) => ClienteService()),
+        ChangeNotifierProvider(create: (_) => ProductService()),
       ],
       child: MaterialApp(
         title: 'Cliente App',
@@ -41,6 +44,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/login': (context) => LoginScreen(),
           '/home': (context) => HomeScreen(),
+          '/productos': (context) => ProductListScreen(),
         },
       ),
     );
